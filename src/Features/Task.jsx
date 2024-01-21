@@ -43,7 +43,7 @@ const Task = () => {
     <div className="shadow-md border-t-2 px-4 py-8">
      <FaClock className=" text-4xl text-red-500" />
      <h1 className=" py-4 font-semibold text-xl">Latest Technology</h1>
-     <p>At [Your Company Name], we&apos;re thrilled to introduce a revolutionary chapter in courier services tailored just for you. Picture this &dash; real-time tracking at your fingertips, swift drone deliveries, and personalized experiences driven by state-of-the-art technology.</p>
+     <p>At VelocityExpress, we&apos;re thrilled to introduce a revolutionary chapter in courier services tailored just for you. Picture this &dash; real-time tracking at your fingertips, swift drone deliveries, and personalized experiences driven by state-of-the-art technology.</p>
     </div>
 
    </div>
