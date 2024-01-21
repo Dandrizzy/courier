@@ -25,7 +25,7 @@ const Intro = () => {
 
     <input {...register('trackingId', {
      minLength: 3, required: true
-    })} defaultValue={id} type="text" placeholder="Input tracking ID / Alpha code" className=" text-neutral-900 p-4 bg-slate-100 w-full active:outline-none outline-none ring-inset" />
+    })} defaultValue={id} type="text" placeholder="Input tracking ID / Alpha code" className=" text-neutral-900 p-4 bg-slate-100 w-full active:outline-none outline-none" />
     <button type='submit' disabled={errors.trackingId} className=' disabled:cursor-not-allowed cursor-pointer p-5 bg-neutral-100 text-neutral-900'>
      <FaSearch />
     </button>

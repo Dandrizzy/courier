@@ -23,11 +23,13 @@ const CreateForm = () => {
 
  const disable = errors.name || errors.sCountry || errors.sAddress || errors.sPhone || errors.sEmail || errors.rName || errors.rCountry || errors.rAddress || errors.rPhone || errors.rEmail || errors.description || errors.weight;
 
+
  const onSubmit = data => {
+  console.log(data);
   create({ ...data, receiveDate, deliveryDate }, {
    onSuccess: () => {
     reset();
-    navigate('/dashboard');
+    navigate(`/dashboard`);
    }
   });
  };
@@ -98,6 +100,11 @@ const CreateForm = () => {
      <div className=" grid gap-4 ">
       <label htmlFor="weight">Recipient weight</label>
       <input {...register('weight', { required: true })} type="number" id='weight' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-green-500' placeholder="Weight in (kg)" />
+     </div>
+
+     <div className=" grid gap-4 ">
+      <label htmlFor="amount">Amount</label>
+      <input {...register('amount', { required: true })} type="number" id='weight' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-green-500' placeholder="Weight in (kg)" />
      </div>
 
      {/* <div className=" grid gap-4 ">

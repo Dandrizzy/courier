@@ -1,25 +1,36 @@
 
-import { useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 import { useGetSpecificApi } from "../Hooks/GetSpecific/useGetSpecificApi";
 import { useGetSpecific } from "../Hooks/GetSpecific/useGetSpecific";
 import Spinner from "../ui/Spinner";
 import Progress from "../ui/Progress";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { MdDelete } from "react-icons/md";
+import { FaEdit } from "react-icons/fa";
+import { useDeleteApi } from "../Hooks/Delete/useDeleteApi";
+import { useDelete } from "../Hooks/Delete/useDelete";
 
 
 const Ticket = () => {
+
+ const navigate = useNavigate();
+
+ const { deleteFn } = useDeleteApi({ key: 'ticket' });
+
+ const { deleteItem, isDeleting } = useDelete({ fn: deleteFn, key: ['ticket'] });
+
+
  const { ticketId } = useParams();
 
  const { getSpecific } = useGetSpecificApi({ key: 'ticket', ticketId });
 
  const { data = [], isFetching } = useGetSpecific({ key: ['ticket', ticketId], fn: getSpecific });
 
- if (isFetching) return <Spinner />;
+ if (isFetching || isDeleting) return <Spinner />;
 
 
-
-
- const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate } = data.data;
+ const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, id } = data.data;
 
 
  return (
@@ -62,6 +73,19 @@ const Ticket = () => {
    </div>
    <div className="grid gap-4 text-neutral-900 p-4">
     <Progress receiveDate={receiveDate} deliveryDate={deliveryDate} />
+
+   </div>
+   <div className=" pt-20 flex justify-center items-center gap-8">
+
+    <button onClick={() => navigate(`/form/${id}`)} disabled={isDeleting} className=' bg-green-600 py-2 text-neutral-100 rounded-full px-4 hover:bg-green-500 font-bold flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-neutral-600'>
+     <FaEdit className=' text-2xl' />Edit
+    </button>
+
+    <button disabled={isDeleting} onClick={() => {
+     deleteItem(id, { onSuccess: () => navigate('/dashBoard') });
+    }} className=' bg-red-500 py-2 text-neutral-100 rounded-full px-4 hover:bg-red-400 font-bold flex items-center gap-2'> <MdDelete className=' text-2xl' /> Delete</button>
+
+    <Link type='button' to={-1} className=' bg-neutral-600 py-2 text-neutral-100 rounded-full px-4 hover:bg-neutral-500 font-bold flex items-center gap-2 '> <FaArrowLeftLong className=' text-2xl' />Back</Link>
 
    </div>
   </>

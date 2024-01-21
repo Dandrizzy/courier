@@ -10,6 +10,12 @@ import Dashboard from './Pages/Dashboard';
 import DashboardLayout from './Layout/DashboardLayout';
 import AdminForm from './Pages/AdminForm';
 import Ticket from './Features/Ticket';
+import Contact from './Pages/Contact';
+import EditForm from './Pages/EditForm';
+
+
+
+
 
 const route = createBrowserRouter([
   {
@@ -36,8 +42,16 @@ const route = createBrowserRouter([
         element: <AdminForm />
       },
       {
+        path: '/form/:formId',
+        element: <EditForm />
+      },
+      {
         path: '/ticket/:ticketId',
         element: <Ticket />
+      },
+      {
+        path: '/mail/:id',
+        element: <Contact />
       },
 
     ]
@@ -49,6 +63,9 @@ const queryClient = new QueryClient({
 });
 
 function App() {
+
+
+
   return (
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />

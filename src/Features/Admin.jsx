@@ -30,13 +30,13 @@ const Admin = () => {
     {/* <div className="">Address</div>
     <div className="">Phone</div>
     <div className="">Email</div> */}
-    <div className="">Description</div>
+    <div className="">Send mail</div>
     {/* <div className="">Weight(KG)</div> */}
    </div>
 
    {fetchData.map(item => {
     return (
-     <div key={item.id} className=" p-2 gap-2  grid grid-cols-5 [&>*]:overflow-x-clip even:bg-neutral-200" onClick={() => navigate(`/ticket/${item.ticketId}`)} >
+     <div key={item.id} className=" p-2 gap-2  grid grid-cols-5 [&>*]:overflow-x-clip even:bg-neutral-200"  >
       <div className=""> {item.name}</div>
       <div className="">{item.sCountry}</div>
       {/* <div className="">{item.sAddress}</div>
@@ -47,7 +47,10 @@ const Admin = () => {
       {/* <div className="">{item.rAddress}</div>
       <div className="">{item.rPhone}</div>
       <div className="">{item.rEmail}</div> */}
-      <div className="">{item.description}</div>
+      <div className=" flex gap-2">
+       <button onClick={() => navigate(`/mail/${item.ticketId}`)} className=" bg-green-500 text-neutral-100 px-2 rounded-md hover:bg-green-400" >Mail</button>
+       <button onClick={() => navigate(`/ticket/${item.ticketId}`)} className=" bg-red-500 text-neutral-100 px-2 rounded-md hover:bg-red-400" >Show</button>
+      </div>
       {/* <div className="">{item.weight}</div> */}
      </div>
     );
