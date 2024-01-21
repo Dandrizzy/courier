@@ -9,7 +9,7 @@ const Footer = () => {
      &copy; {new Date().getFullYear()}
     </strong>
     <span>
-     <strong>Logistics</strong>
+     <strong>VelocityExpress</strong>
     </span>
    </div>
 

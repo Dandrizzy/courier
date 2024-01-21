@@ -7,7 +7,7 @@ const Nav = () => {
 
  return (
   <div className=" hidden items-center md:grid grid-cols-2 p-4 bg-neutral-900 text-slate-100">
-   <h1>Logistics</h1>
+   <h1>VelocityExpress</h1>
 
    <ul className=" lg:text-lg [&>*]:cursor-pointer flex justify-between">
     <li className='hover:animate-bounce hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2 flex items-center justify-center gap-1' onClick={() => scrollToSection('home')}><MdHome />Home</li>
