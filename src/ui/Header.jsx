@@ -6,10 +6,10 @@ const Header = () => {
  const [open, setOpen] = useState(false);
  return (
   <div className=' md:hidden block'>
-   <div className=" items-center flex justify-between p-4 bg-neutral-900 text-slate-100">
+   <div className=" items-center flex justify-between p-4 bg-blue-700 text-slate-100">
 
     <h1>
-     VelocityLogistics
+     VelocityExpress
     </h1>
 
     <div className=" text-lg" onClick={() => setOpen(isOpen => !isOpen)}>{open ? <MdClose /> : <MdMenu />}</div>

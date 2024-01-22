@@ -2,7 +2,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa6'
 
 const Footer = () => {
  return (
-  <div className=" bg-neutral-900  p-4 grid gap-6 sm:flex sm:justify-between">
+  <div className=" bg-blue-700  p-4 grid gap-6 sm:flex sm:justify-between">
 
    <div className=" gap-2 flex">
     <strong>

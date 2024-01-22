@@ -35,7 +35,7 @@ const Ticket = () => {
 
  return (
   <>
-   <div className=" gap-8 grid grid-cols-2 p-4 text-neutral-900">
+   <div className=" gap-8 grid sm:grid-cols-2 p-4 text-neutral-900">
     <div className="grid gap-4 ">
      <h1 className=" text-xl font-semibold">Sender&apos;s information</h1>
      <p>Name: {name}</p>
@@ -71,13 +71,15 @@ const Ticket = () => {
 
 
    </div>
+
    <div className="grid gap-4 text-neutral-900 p-4">
     <Progress receiveDate={receiveDate} deliveryDate={deliveryDate} />
 
    </div>
-   <div className=" pt-20 flex justify-center items-center gap-8">
 
-    <button onClick={() => navigate(`/form/${id}`)} disabled={isDeleting} className=' bg-green-600 py-2 text-neutral-100 rounded-full px-4 hover:bg-green-500 font-bold flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-neutral-600'>
+   <div className=" py-10 flex justify-center items-center gap-3 sm:gap-8">
+
+    <button onClick={() => navigate(`/form/${id}`)} disabled={isDeleting} className=' bg-blue-600 py-2 text-neutral-100 rounded-full px-4 hover:bg-blue-500 font-bold flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-neutral-600'>
      <FaEdit className=' text-2xl' />Edit
     </button>
 
