@@ -18,7 +18,7 @@ const Intro = () => {
  console.log();
 
  return (
-  <div className=" grid p-4 bg-[url('./public/8.jpg')] bg-center min-h-screen">
+  <div className=" grid p-4 bg-[url('/8.jpg')] bg-center min-h-screen">
    <Form onSubmit={handleSubmit(onSubmit)} className=" flex justify-center items-center">
 
     <input {...register('trackingId', {

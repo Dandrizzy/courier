@@ -16,7 +16,7 @@ const Task = () => {
    <div className="grid lg:grid-cols-2 gap-8">
 
 
-    <div className=" bg-[url('/public/3.jpg')] bg-cover shadow-md border-t-2 px-4 py-8">
+    <div className=" bg-[url('/3.jpg')] bg-cover shadow-md border-t-2 px-4 py-8">
      <div className=" backdrop-blur-lg text-neutral-950 font-bold p-4 max-w-md backdrop-invert-0 mx-auto">
       <FaTruckFast className=" text-4xl text-blue-500" />
       <h1 className=" py-4 font-semibold text-xl">Fast & On Time Delivery</h1>
@@ -24,7 +24,7 @@ const Task = () => {
      </div>
     </div>
 
-    <div className=" shadow-md border-t-2 px-4 py-8 bg-cover bg-[url('/public/air.jpg')] ">
+    <div className=" shadow-md border-t-2 px-4 py-8 bg-cover bg-[url('/air.jpg')] ">
      <div className=" mx-auto backdrop-blur-lg text-neutral-50 font-bold p-4 max-w-md backdrop-invert-0">
 
       <FaDelicious className=" text-4xl text-blue-500" />
@@ -34,7 +34,7 @@ const Task = () => {
     </div>
 
 
-    <div className="shadow-md border-t-2 px-4 py-8 bg-cover bg-[url('/public/12.jpg')] ">
+    <div className="shadow-md border-t-2 px-4 py-8 bg-cover bg-[url('/12.jpg')] ">
 
      <div className=" mx-auto backdrop-blur-lg text-neutral-50 font-bold p-4 max-w-md backdrop-invert-0">
 
@@ -46,7 +46,7 @@ const Task = () => {
     </div>
 
 
-    <div className="bg-cover bg-[url('/public/6.jpg')] shadow-md border-t-2 px-4 py-8">
+    <div className="bg-cover bg-[url('/6.jpg')] shadow-md border-t-2 px-4 py-8">
      <div className=" mx-auto backdrop-blur-lg text-neutral-50 font-bold p-4 max-w-md backdrop-invert-0">
       <FaCloudMoon className=" text-4xl text-blue-500" />
       <h1 className=" py-4 font-semibold text-xl">Weather Insurance</h1>
@@ -54,7 +54,7 @@ const Task = () => {
      </div>
     </div>
 
-    <div className="bg-cover bg-[url('/public/05.jpg')] shadow-md border-t-2 px-4 py-8">
+    <div className="bg-cover bg-[url('/05.jpg')] shadow-md border-t-2 px-4 py-8">
      <div className=" mx-auto backdrop-blur-lg text-neutral-50 font-bold p-4 max-w-md backdrop-invert-0">
       <FaClock className=" text-4xl text-blue-500" />
       <h1 className=" py-4 font-semibold text-xl">Latest Technology</h1>
