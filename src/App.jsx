@@ -14,6 +14,7 @@ import Contact from './Pages/Contact';
 import EditForm from './Pages/EditForm';
 import Login from './Pages/Login';
 import ProtectedRoute from './ui/ProtectedRoute';
+import HomeTicket from './Features/HomeTicket';
 
 
 
@@ -27,6 +28,10 @@ const route = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/:alphaCode',
+        element: <HomeTicket />
       },
 
     ]

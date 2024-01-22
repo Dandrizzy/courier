@@ -3,9 +3,13 @@ import { useGetSpecificApi } from "../Hooks/GetSpecific/useGetSpecificApi";
 import { useGetSpecific } from "../Hooks/GetSpecific/useGetSpecific";
 import Spinner from "../ui/Spinner";
 import Progress from "../ui/Progress";
+import { useParams } from "react-router-dom";
+import { formatCurrency } from "../Hooks/helpers";
 
 
-const HomeTicket = ({ ticketId }) => {
+const HomeTicket = () => {
+
+ const { alphaCode: ticketId } = useParams();
 
 
  const { getSpecific } = useGetSpecificApi({ key: 'ticket', ticketId });
@@ -16,13 +20,13 @@ const HomeTicket = ({ ticketId }) => {
 
  if (data?.data === undefined) return <p>Please check your code. 🔍</p>;
 
- const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate } = data.data;
+ const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, amount } = data.data;
 
  return (
   <>
 
-   <>
-    <div className=" text-stone-100 gap-8 grid grid-cols-2 p-4">
+   <div className=" max-w-3xl flex flex-col justify-center mx-auto ">
+    <div className=" max-w-2xl text-neutral-900 gap-8 grid sm:grid-cols-2 p-4">
      <div className="grid gap-4 ">
       <h1 className=" text-xl font-semibold">Sender&apos;s information</h1>
       <p>Name: {name}</p>
@@ -45,11 +49,11 @@ const HomeTicket = ({ ticketId }) => {
       <h1 className=" text-xl font-semibold">Parcel details</h1>
       <p>Description: {description}</p>
       <p>Weight: {weight}</p>
-      <p>Quantity: {weight}</p>
+      <p>Amount: {formatCurrency(amount)}</p>
      </div>
 
      <div className="grid gap-4 ">
-      <h1 className=" text-xl font-semibold">Recipient information</h1>
+      <h1 className=" text-xl font-semibold">Tracking details</h1>
       <p>Ticket ID: {ticketId}</p>
       <p>Receive date: {receiveDate}</p>
       <p>Estimated delivery date: {deliveryDate}</p>
@@ -62,7 +66,7 @@ const HomeTicket = ({ ticketId }) => {
      <Progress receiveDate={receiveDate} deliveryDate={deliveryDate} />
 
     </div>
-   </>
+   </div>
 
   </>
  );

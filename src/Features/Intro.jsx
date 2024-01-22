@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaSearch } from 'react-icons/fa';
-import { Form } from 'react-router-dom';
-import HomeTicket from './HomeTicket';
+import { Form, useNavigate } from 'react-router-dom';
 
 const Intro = () => {
+ const navigate = useNavigate();
 
  const [alphaCode, setAlphaCode] = useState('');
 
@@ -12,10 +12,9 @@ const Intro = () => {
 
  const onSubmit = data => {
   setAlphaCode(data.trackingId);
-
+  navigate(`/${alphaCode}`);
  };
 
- console.log();
 
  return (
   <div className=" grid p-4 bg-[url('/8.jpg')] bg-center min-h-screen">
@@ -28,10 +27,6 @@ const Intro = () => {
      <FaSearch />
     </button>
    </Form>
-
-   <div >
-    {alphaCode !== '' && <HomeTicket ticketId={alphaCode} />}
-   </div>
 
    <div className=' text-center'>
     Track shipment / Find and ship a product using Alpha code

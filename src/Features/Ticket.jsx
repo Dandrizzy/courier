@@ -10,6 +10,7 @@ import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { useDeleteApi } from "../Hooks/Delete/useDeleteApi";
 import { useDelete } from "../Hooks/Delete/useDelete";
+import { formatCurrency } from "../Hooks/helpers";
 
 
 const Ticket = () => {
@@ -27,10 +28,10 @@ const Ticket = () => {
 
  const { data = [], isFetching } = useGetSpecific({ key: ['ticket', ticketId], fn: getSpecific });
 
- if (isFetching || isDeleting) return <Spinner />;
+ if (isFetching || isDeleting || data.data === undefined) return <Spinner />;
 
 
- const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, id } = data.data;
+ const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, id, amount } = data.data;
 
 
  return (
@@ -57,8 +58,8 @@ const Ticket = () => {
     <div className="grid gap-4 ">
      <h1 className=" text-xl font-semibold">Parcel details</h1>
      <p>Description: {description}</p>
-     <p>Weight: {weight}</p>
-     <p>Quantity: {weight}</p>
+     <p>Weight: {weight}kg</p>
+     <p>Amount: {formatCurrency(amount)}</p>
     </div>
 
     <div className="grid gap-4 ">
