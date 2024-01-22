@@ -18,12 +18,12 @@ const Intro = () => {
  console.log();
 
  return (
-  <div className="  grid p-4 bg-red-500 min-h-screen">
+  <div className=" grid p-4 bg-[url('./public/8.jpg')] bg-center min-h-screen">
    <Form onSubmit={handleSubmit(onSubmit)} className=" flex justify-center items-center">
 
     <input {...register('trackingId', {
      minLength: 3, required: true
-    })} type="text" placeholder="Input tracking ID / Alpha code" className=" text-neutral-900 p-4 bg-slate-100 w-full active:outline-none outline-none" />
+    })} type="text" placeholder="Input tracking ID / Alpha code" className=" text-neutral-900 p-4 bg-slate-100 w-full sm:max-w-md lg:max-w-2xl outline-none" />
     <button type='submit' disabled={errors.trackingId} className=' disabled:cursor-not-allowed cursor-pointer p-5 bg-neutral-100 text-neutral-900'>
      <FaSearch />
     </button>

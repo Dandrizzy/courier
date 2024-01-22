@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from "react-redux";
 const Home = () => {
  const { ticket } = useSelector(state => state.ticket);
 
- console.log(ticket);
 
  const dispatch = useDispatch();
  const { fetch: fetchFn } = useGetApi({ key: 'ticket' });
@@ -20,7 +19,8 @@ const Home = () => {
 
  useEffect(() => {
   dispatch(addTicket(fetch));
- }, [fetch, dispatch]);
+  console.log(ticket);
+ }, [fetch, dispatch, ticket]);
 
  if (isFetching) return <Spinner />;
  return (

@@ -12,6 +12,8 @@ import AdminForm from './Pages/AdminForm';
 import Ticket from './Features/Ticket';
 import Contact from './Pages/Contact';
 import EditForm from './Pages/EditForm';
+import Login from './Pages/Login';
+import ProtectedRoute from './ui/ProtectedRoute';
 
 
 
@@ -31,7 +33,10 @@ const route = createBrowserRouter([
   },
   {
     errorElement: <Error />,
-    element: <DashboardLayout />,
+    element:
+      <ProtectedRoute>
+        <DashboardLayout />
+      </ProtectedRoute>,
     children: [
       {
         path: '/dashboard',
@@ -55,6 +60,11 @@ const route = createBrowserRouter([
       },
 
     ]
+  },
+  {
+    errorElement: <Error />,
+    element: <Login />,
+    path: '/login',
   },
 ]);
 

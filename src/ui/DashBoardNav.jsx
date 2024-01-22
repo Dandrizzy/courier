@@ -1,6 +1,7 @@
 import { MdHome, } from 'react-icons/md';
 
 import { useNavigate } from 'react-router-dom';
+import Logout from '../Features/authentication/Logout';
 
 
 const Nav = () => {
@@ -13,11 +14,15 @@ const Nav = () => {
 
    <ul className=" lg:text-lg [&>*]:cursor-pointer flex justify-between">
     <li
-     className='hover:animate-bounce hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2 flex items-center justify-center gap-1' onClick={() => {
+     className=' hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2 flex items-center justify-center gap-1' onClick={() => {
       navigate('/dashboard');
-     }}><MdHome />Home</li>
+     }}>
+     <MdHome />
+     <span>Home</span>
 
-    {/* <li className='hover:animate-bounce flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2' onClick={() => scrollToSection('contact')}><MdReceipt />Ticket</li> */}
+    </li>
+
+    <li className='flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full px-2'><Logout /></li>
 
    </ul>
   </div>
