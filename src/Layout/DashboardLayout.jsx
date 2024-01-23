@@ -6,7 +6,6 @@ const DashboardLayout = () => {
   <>
    <DashBoardNav />
    <Outlet />
-
   </>
  );
 };

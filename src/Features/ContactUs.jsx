@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { useGetSpecificApi } from '../Hooks/GetSpecific/useGetSpecificApi';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -7,8 +7,10 @@ import Spinner from '../ui/Spinner';
 import { FaCheck } from 'react-icons/fa6';
 import { formatCurrency } from '../Hooks/helpers';
 import toast from 'react-hot-toast';
+import SpinnerMini from '../ui/SpinnerMini';
 
 export const ContactUs = () => {
+  const [disable, setDisable] = useState(false);
   const navigate = useNavigate();
   const form = useRef();
   const { id } = useParams();
@@ -23,6 +25,7 @@ export const ContactUs = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
+    setDisable(d => !d);
     emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, 'HS91SoID9eOvXD1Kq')
       .then((result) => {
         toast.success(result.text + ' Successfully sent');
@@ -74,9 +77,10 @@ export const ContactUs = () => {
         </div>
 
         <div className="">
-          <button type='submit' className=' bg-blue-600 py-2 text-neutral-100 rounded-full px-4 hover:bg-blue-500 font-bold flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-neutral-600'>
-            <FaCheck className=' text-2xl' /> Send
+          <button disabled={disable} type='submit' className=' bg-blue-600 py-2 text-neutral-100 rounded-full px-4 hover:bg-blue-500 font-bold flex items-center gap-2 disabled:cursor-not-allowed disabled:bg-neutral-600 '>
+            <FaCheck className=' text-2xl' />{disable ? <SpinnerMini /> : 'Send'}
           </button>
+
         </div>
       </form>
     </div>

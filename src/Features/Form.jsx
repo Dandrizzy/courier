@@ -113,7 +113,7 @@ const CreateForm = () => {
      </div> */}
 
      <div className="grid gap-4">
-      <label htmlFor="date">Set start date: :</label>
+      <label htmlFor="date">Set start date:</label>
       <input className="focus:border-blue-500 border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none border-b p-2" type="datetime-local" value={receiveDate
        // .toISOString().slice(0, -8)
       } onChange={e => setReceiveDate(new Date(e.target.value).toISOString().slice(0, -8))} />

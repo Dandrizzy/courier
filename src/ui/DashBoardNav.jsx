@@ -10,7 +10,7 @@ const Nav = () => {
 
  return (
   <div className=" items-center flex justify-between p-4 bg-blue-700 text-slate-100">
-   <h1 onClick={() => navigate('/')}>VelocityExpress</h1>
+   <img onClick={() => navigate('/')} src='/ve.png' alt='Logo' className=' h-12 bg-zinc-100 p-2 rounded-full' />
 
    <ul className=" lg:text-lg [&>*]:cursor-pointer flex justify-between">
     <li

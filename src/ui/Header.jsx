@@ -11,16 +11,15 @@ const Header = () => {
   <div className=' md:hidden block'>
    <div className=" items-center flex justify-between p-4 bg-blue-700 text-slate-100">
 
-    <h1 onClick={() => navigate('/')}>
-     VelocityExpress
-    </h1>
+    <img onClick={() => navigate('/')} src='/ve.png' alt='Logo' className=' h-12 bg-zinc-100 p-2 rounded-full' />
+
 
     <div className=" text-lg" onClick={() => setOpen(isOpen => !isOpen)}>{open ? <MdClose /> : <MdMenu />}</div>
    </div>
 
    {open && <ul className=" px-4 bg-blue-600  text-slate-100 grid divide-y [&>*]:cursor-pointer ">
 
-    <li className='flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2'><MdHome />Home</li>
+    <li className='flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2' onClick={() => navigate('/')}><MdHome />Home</li>
 
     <li className=' flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2 ' onClick={() => scrollToSection('contact')}><MdMail />Contact</li>
 
