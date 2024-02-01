@@ -19,11 +19,20 @@ const Header = () => {
 
    {open && <ul className=" px-4 bg-blue-600  text-slate-100 grid divide-y [&>*]:cursor-pointer ">
 
-    <li className='flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2' onClick={() => navigate('/')}><MdHome />Home</li>
+    <li className='flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2' onClick={() => {
+     setOpen(isOpen => !isOpen);
+     navigate('/');
+    }}><MdHome />Home</li>
 
-    <li className=' flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2 ' onClick={() => scrollToSection('contact')}><MdMail />Contact</li>
+    <li className=' flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2 ' onClick={() => {
+     setOpen(isOpen => !isOpen);
+     scrollToSection('contact');
+    }}><MdMail />Contact</li>
 
-    <li className=' flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2' onClick={() => navigate('/dashboard')}><FaUser />Admin</li>
+    <li className=' flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2' onClick={() => {
+     setOpen(isOpen => !isOpen);
+     navigate('/dashboard');
+    }}><FaUser />Admin</li>
    </ul>}
   </div>
  );

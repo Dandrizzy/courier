@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Heading from "../ui/Heading";
 import LoginForm from "../Features/authentication/LoginForm";
+import Header from "../ui/Header";
+import Nav from "../ui/Nav";
 
 const LoginLayout = styled.main`
   min-height: 100vh;
@@ -15,6 +17,8 @@ const LoginLayout = styled.main`
 function Login() {
   return (
     <LoginLayout>
+      <Header />
+      <Nav />
       <Heading as="h4">Log in to your account</Heading>
       <LoginForm />
     </LoginLayout>
