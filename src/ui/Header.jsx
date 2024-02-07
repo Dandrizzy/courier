@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaUser } from 'react-icons/fa6';
+import { FaLocationPin } from 'react-icons/fa6';
 import { MdClose, MdHome, MdMail, MdMenu } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import { scrollToSection } from '../Hooks/ScrollToSection';
@@ -31,8 +31,7 @@ const Header = () => {
 
     <li className=' flex items-center gap-1 hover:bg-blue-400 rounded-sm py-8 hover:px-4 transition-all duration-500 hover:gap-2' onClick={() => {
      setOpen(isOpen => !isOpen);
-     navigate('/dashboard');
-    }}><FaUser />Admin</li>
+    }}><FaLocationPin />Track</li>
    </ul>}
   </div>
  );

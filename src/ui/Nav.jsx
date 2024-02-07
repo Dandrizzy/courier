@@ -1,6 +1,6 @@
 import { MdHome, MdMail } from 'react-icons/md';
 import { scrollToSection } from '../Hooks/ScrollToSection';
-import { FaUser } from 'react-icons/fa6';
+import { FaLocationPin } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -17,7 +17,7 @@ const Nav = () => {
 
     <li className=' flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2' onClick={() => scrollToSection('contact')}><MdMail />Contact</li>
 
-    <li className=' flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2' onClick={() => navigate('/dashboard')}><FaUser />Admin</li>
+    <li className=' flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2' ><FaLocationPin />Track</li>
    </ul>
   </div>
  );

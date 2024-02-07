@@ -17,7 +17,7 @@ const Task = () => {
 
 
     <div className=" bg-[url('/3.jpg')] bg-cover shadow-md border-t-2 px-4 py-8">
-     <div className=" backdrop-blur-lg text-neutral-950 font-bold p-4 max-w-md backdrop-invert-0 mx-auto">
+     <div className="backdrop-blur-lg text-neutral-950 font-bold p-4 max-w-md backdrop-invert-0 mx-auto">
       <FaTruckFast className=" text-4xl text-blue-500" />
       <h1 className=" py-4 font-semibold text-xl">Fast & On Time Delivery</h1>
       <p>We also understand the importance of fast and on-time delivery for our clients. Our mission is to provide reliable and efficient shipping services that meet the expectations of our clients and exceed industry standards.To achieve fast and on-time delivery, we utilize the latest technologies and employ highly skilled professionals who are trained to handle shipments of all sizes and types. We work with a network of trusted partners and carriers to ensure that we can deliver to any location in a timely manner.</p>

@@ -11,6 +11,8 @@ const Admin = () => {
  const { fetch } = useGetApi({ key: 'ticket' });
  const { isFetching, fetch: fetchData = [] } = useGet({ key: ['ticket'], fn: fetch });
 
+ const filteredData = fetchData.filter(item => item.author === 'iyke');
+
 
 
  if (isFetching) return <Spinner />;
@@ -34,7 +36,7 @@ const Admin = () => {
     {/* <div className="">Weight(KG)</div> */}
    </div>
 
-   {fetchData.map(item => {
+   {filteredData.map(item => {
     return (
      <div key={item.id} className=" p-2 gap-2  grid grid-cols-2 md:grid-cols-5 [&>*]:overflow-x-clip even:bg-neutral-200"  >
       <div className="hidden md:block"> {item.name}</div>
