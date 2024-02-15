@@ -9,7 +9,6 @@ import { addTicket } from "../Features/ticketSlice";
 import Spinner from "../ui/Spinner";
 import { useDispatch, useSelector } from "react-redux";
 import ChatBot from "../Features/ChatBot";
-import Logins from "../Features/authentication/Logins";
 
 const Home = () => {
  const { ticket } = useSelector(state => state.ticket);
@@ -27,7 +26,6 @@ const Home = () => {
  return (
   <>
    <Intro />
-   <Logins />
    <Task />
    <Work />
    <ChatBot />
