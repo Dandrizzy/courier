@@ -39,7 +39,7 @@ function Logins() {
         <Form onSubmit={() => handleSubmit(onSubmit())}>
           <Dialog.Root>
             <Dialog.Trigger>
-              <FaUser />
+              <FaUser /> Login
             </Dialog.Trigger>
 
             <Dialog.Content style={{ maxWidth: 450 }}>
