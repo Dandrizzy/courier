@@ -5,11 +5,13 @@ import Input from "../../ui/Input";
 import FormRowVertical from "../../ui/FormRowVertical";
 import { useLogin } from "./useLogin";
 import SpinnerMini from "../../ui/SpinnerMini";
+import { useUser } from "./useUser";
 
 function LoginForm() {
+  const { user } = useUser();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { login, isLoading } = useLogin();
+  const { login, isLoading } = useLogin({ route: `/dashboard/${user?.id}` });
 
   function handleSubmit(e) {
     e.preventDefault();

@@ -3,7 +3,7 @@ import { login as loginApi } from '../../Services/apiAuth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
-export function useLogin() {
+export function useLogin({route}) {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ export function useLogin() {
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (user) => {
       queryClient.setQueryData(['user'], user.user);
-      navigate('/dashboard', { replace: true });
+      navigate(route, { replace: true });
     },
     onError: (err) => {
       console.log('ERROR', err);

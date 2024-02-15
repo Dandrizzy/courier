@@ -1,9 +1,9 @@
-import { FaLinkedin, FaPhone, FaTwitter } from 'react-icons/fa6';
+import { FaPhone } from 'react-icons/fa6';
 import { MdMail } from 'react-icons/md';
 
 const Footer = () => {
  return (
-  <div id='contact' className=" bg-blue-700  p-4  ">
+  <div id='contact' className=" bg-blue-700  p-4 text-neutral-100">
 
    <div className="max-w-4xl grid gap-6 sm:flex sm:justify-between mx-auto">
 
@@ -32,20 +32,17 @@ const Footer = () => {
     <div className="">
      <strong>Company</strong>
      <ul className=' pt-2 grid gap-2'>
-      <li>About us</li>
-      <li>Blog</li>
-      <li>T&C</li>
-      <li>Privacy Policy</li>
+      <li>Velocity Express</li>
+      <li>Courier</li>
+      <li>Logistics</li>
      </ul>
     </div>
 
     <div className=" ">
      <strong>Connect with us</strong>
      <ul className=' pt-2 flex  gap-6'>
-      <li><FaPhone /></li>
-      <li><MdMail /></li>
-      <li><FaTwitter /></li>
-      <li><FaLinkedin /></li>
+      <li><a href="tel:+12192760111"><FaPhone /></a></li>
+      <li><a href="mailto:velocityexpresses@gmail.com"><MdMail /></a></li>
      </ul>
      <img src="/veh.png" alt="Lgo" className=" h-20 mx-auto mt-8 bg-neutral-100 rounded-md p-1" />
     </div>

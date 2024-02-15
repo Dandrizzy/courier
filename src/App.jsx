@@ -1,5 +1,6 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css';
+import '@radix-ui/themes/styles.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Toaster } from 'react-hot-toast';
@@ -15,6 +16,8 @@ import EditForm from './Pages/EditForm';
 import Login from './Pages/Login';
 import ProtectedRoute from './ui/ProtectedRoute';
 import HomeTicket from './Features/HomeTicket';
+import ChatMessages from './Pages/ChatMessages';
+import AllMsg from './Pages/AllMsg';
 
 
 
@@ -44,8 +47,16 @@ const route = createBrowserRouter([
       </ProtectedRoute>,
     children: [
       {
-        path: '/dashboard',
+        path: '/dashboard/d82350ef-5ec5-4768-a819-06d04b8b62b8',
         element: <Dashboard />
+      },
+      {
+        path: '/dashboard/messages',
+        element: <ChatMessages />
+      },
+      {
+        path: '/dashboard/messages/:chatId',
+        element: <AllMsg />
       },
       {
         path: '/form',

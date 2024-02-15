@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGetApi } from "../Hooks/Get/useGetApi";
 import { useGet } from "../Hooks/Get/useGet";
 import Spinner from "../ui/Spinner";
+import { Button, Flex } from "@radix-ui/themes";
 
 const Admin = () => {
  const navigate = useNavigate();
@@ -49,10 +50,18 @@ const Admin = () => {
       {/* <div className="">{item.rAddress}</div>
       <div className="">{item.rPhone}</div>
       <div className="">{item.rEmail}</div> */}
-      <div className=" flex gap-2">
+      <Flex gap="3">
+       <Button onClick={() => navigate(`/mail/${item.ticketId}`)} color="indigo" variant="solid">
+        Mail
+       </Button>
+       <Button onClick={() => navigate(`/ticket/${item.ticketId}`)} color="indigo" variant="soft">
+        Show
+       </Button>
+      </Flex>
+      {/* <div className=" flex gap-2">
        <button onClick={() => navigate(`/mail/${item.ticketId}`)} className=" bg-blue-500 text-neutral-100 px-2 rounded-md hover:bg-blue-400" >Mail</button>
        <button onClick={() => navigate(`/ticket/${item.ticketId}`)} className=" border-2 border-blue-600 text-blue-900 px-2 rounded-md hover:bg-blue-200" >Show</button>
-      </div>
+      </div> */}
       {/* <div className="">{item.weight}</div> */}
      </div>
     );

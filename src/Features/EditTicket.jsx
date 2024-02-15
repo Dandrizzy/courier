@@ -33,7 +33,7 @@ const EditTicket = () => {
 
  if (isEditing || isFetching || data.data === undefined) return <Spinner />;
 
- const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, amount, id, ticketId, receiveDate: rDate, deliveryDate: dDate } = data.data;
+ const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, amount, id, ticketId, receiveDate: rDate, deliveryDate: dDate, status } = data.data;
 
 
  const disable = errors.name || errors.sCountry || errors.sAddress || errors.sPhone || errors.sEmail || errors.rName || errors.rCountry || errors.rAddress || errors.rPhone || errors.rEmail || errors.description || errors.weight;
@@ -122,13 +122,13 @@ const EditTicket = () => {
       <input {...register('amount', { required: true, })} defaultValue={amount} type="number" id='amount' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-blue-500' placeholder="Amount ($)" />
      </div>
 
-     {/* <div className=" grid gap-2 ">
-      <label htmlFor="deliveryDate">Delivery date::</label>
-      <input {...register('deliveryDate', { required: true })} defaultValue={} type="text" id='deliveryDate' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-blue-500' placeholder="Total days" />
-     </div> */}
+     <div className=" grid gap-4 ">
+      <label htmlFor="deliveryDate">Status:</label>
+      <input {...register('status', { required: true })} type="text" id='status' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-blue-500' placeholder="Status" defaultValue={status} />
+     </div>
 
      <div className="grid gap-2">
-      <label htmlFor="date">Set start date: :</label>
+      <label htmlFor="date">Set start date:</label>
       <input className="focus:border-blue-500 border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none border-b p-2" type="datetime-local" defaultValue={receiveDate === undefined ? rDate : receiveDate
       } onChange={e => setReceiveDate(new Date(e.target.value).toISOString().slice(0, -8))} />
      </div>

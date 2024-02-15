@@ -2,7 +2,6 @@
 import { useGetSpecificApi } from "../Hooks/GetSpecific/useGetSpecificApi";
 import { useGetSpecific } from "../Hooks/GetSpecific/useGetSpecific";
 import Spinner from "../ui/Spinner";
-import Progress from "../ui/Progress";
 import { useParams } from "react-router-dom";
 import { formatCurrency } from "../Hooks/helpers";
 
@@ -20,7 +19,7 @@ const HomeTicket = () => {
 
  if (data?.data === undefined) return <p>Please check your code. 🔍</p>;
 
- const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, amount } = data.data;
+ const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, amount, status } = data.data;
 
  return (
   <>
@@ -63,8 +62,7 @@ const HomeTicket = () => {
 
     </div>
     <div className="grid gap-4 text-neutral-900 p-4">
-     <Progress receiveDate={receiveDate} deliveryDate={deliveryDate} />
-
+     Status: {status}
     </div>
    </div>
 

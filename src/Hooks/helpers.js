@@ -19,3 +19,21 @@ export function calcMinutesLeft(dateStr) {
   const d2 = new Date(dateStr).getTime();
   return Math.round((d2 - d1) / 60000);
 }
+
+// Function to group messages by chat ID and return an array of chat objects
+export function groupMessagesByChatId(messages) {
+  const groupedMessages = [];
+
+  messages.forEach((message) => {
+    const chatId = message.chatId;
+    const existingChat = groupedMessages.find((chat) => chat.chatId === chatId);
+
+    if (existingChat) {
+      existingChat.messages.push(message);
+    } else {
+      groupedMessages.push({ chatId, messages: [message] });
+    }
+  });
+
+  return groupedMessages;
+}

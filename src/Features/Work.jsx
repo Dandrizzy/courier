@@ -1,7 +1,7 @@
 
 const Work = () => {
  return (
-  <div className=" grid grid-cols-2 p-16 bg-stone-900">
+  <div className=" grid grid-cols-2 p-16 bg-neutral-900 text-neutral-100">
    <div className=" grid gap-4 py-8 border-b-2 border-r-2 text-center border-blue-500">
     <h1 className=" font-bold text-4xl">40</h1>
     <p className=" text-xl">Years experience</p>

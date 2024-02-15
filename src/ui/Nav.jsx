@@ -2,9 +2,13 @@ import { MdHome, MdMail } from 'react-icons/md';
 import { scrollToSection } from '../Hooks/ScrollToSection';
 import { FaLocationPin } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+import Logout from '../Features/authentication/Logout';
+import Logins from '../Features/authentication/Logins';
+import { useUser } from '../Features/authentication/useUser';
 
 
 const Nav = () => {
+ const { isAuthenticated } = useUser();
 
  const navigate = useNavigate();
 
@@ -18,6 +22,11 @@ const Nav = () => {
     <li className=' flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2' onClick={() => scrollToSection('contact')}><MdMail />Contact</li>
 
     <li className=' flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2' ><FaLocationPin />Track</li>
+
+    <li className=' flex items-center justify-center gap-1 hover:bg-neutral-200/20 transition-all duration-300 rounded-full p-2' >
+     {isAuthenticated ? <Logout /> :
+      <Logins />}
+    </li>
    </ul>
   </div>
  );

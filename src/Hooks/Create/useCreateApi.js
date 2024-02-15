@@ -5,7 +5,7 @@ export const useCreateApi = ({ key }) => {
     // 1. Create
     const { data, error } = await supabase
       .from(key)
-      .upsert([newData])
+      .insert([newData])
       .select()
       .single();
 

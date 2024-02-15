@@ -107,10 +107,10 @@ const CreateForm = () => {
       <input {...register('amount', { required: true })} type="number" id='weight' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-blue-500' placeholder="Amount in ($)" />
      </div>
 
-     {/* <div className=" grid gap-4 ">
-      <label htmlFor="deliveryDate">Delivery date::</label>
-      <input {...register('deliveryDate', { required: true })} type="number" id='deliveryDate' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-blue-500' placeholder="Total days" />
-     </div> */}
+     <div className=" grid gap-4 ">
+      <label htmlFor="deliveryDate">Status:</label>
+      <input {...register('status', { required: true })} type="text" id='status' className=' border-b border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none py-2 focus:border-blue-500' placeholder="Status" />
+     </div>
 
      <div className="grid gap-4">
       <label htmlFor="date">Set start date:</label>
@@ -120,7 +120,7 @@ const CreateForm = () => {
      </div>
 
      <div className="grid gap-4">
-      <label htmlFor="date">Set end date: :</label>
+      <label htmlFor="date">Set end date:</label>
       <input className="focus:border-blue-500 border-neutral-900 duration-500 transition-all focus:border-b-2 outline-none border-b p-2" type="datetime-local" value={deliveryDate
        // .toISOString().slice(0, -8)
       } onChange={e => setDeliveryDate(new Date(e.target.value).toISOString().slice(0, -8))} />

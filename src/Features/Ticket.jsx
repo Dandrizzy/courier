@@ -4,7 +4,6 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetSpecificApi } from "../Hooks/GetSpecific/useGetSpecificApi";
 import { useGetSpecific } from "../Hooks/GetSpecific/useGetSpecific";
 import Spinner from "../ui/Spinner";
-import Progress from "../ui/Progress";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { MdDelete } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
@@ -31,7 +30,7 @@ const Ticket = () => {
  if (isFetching || isDeleting || data.data === undefined) return <Spinner />;
 
 
- const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, id, amount } = data.data;
+ const { name, rAddress, rCountry, rEmail, rName, rPhone, sAddress, sCountry, sEmail, sPhone, weight, description, deliveryDate, receiveDate, id, amount, status } = data.data;
 
 
  return (
@@ -74,7 +73,7 @@ const Ticket = () => {
    </div>
 
    <div className="grid gap-4 text-neutral-900 p-4">
-    <Progress receiveDate={receiveDate} deliveryDate={deliveryDate} />
+    Status: {status}
 
    </div>
 

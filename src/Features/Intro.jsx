@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { FaSearch } from 'react-icons/fa';
 import { Form, useNavigate } from 'react-router-dom';
+import ShuffleHero from './ShuffleHero';
+import ChatBot from './ChatBot';
 
 const Intro = () => {
  const navigate = useNavigate();
@@ -22,14 +24,15 @@ const Intro = () => {
 
     <input {...register('trackingId', {
      minLength: 3, required: true
-    })} type="text" placeholder="Input tracking ID / Alpha code" className=" text-neutral-900 p-4 bg-slate-100 w-full sm:max-w-md lg:max-w-2xl outline-none" />
-    <button type='submit' disabled={errors.trackingId} className=' disabled:cursor-not-allowed cursor-pointer p-5 bg-neutral-100 text-neutral-900'>
+    })} type="text" placeholder="Input tracking ID / Alpha code" className="border-e-0 text-neutral-100 p-4 bg-slate-100 w-full sm:max-w-md lg:max-w-2xl outline-none bg-transparent border-2 font-semibold rounded-s-full" />
+    <button type='submit' disabled={errors.trackingId} className=' bg-transparent border-2 rounded-e-full disabled:cursor-not-allowed cursor-pointer p-5 bg-neutral-100 text-neutral-100 border-s-0'>
      <FaSearch />
     </button>
    </Form>
 
    <div className=' text-center'>
-    Track shipment / Find and ship a product using Alpha code
+    <ShuffleHero />
+    <ChatBot />
    </div>
   </div>
  );
