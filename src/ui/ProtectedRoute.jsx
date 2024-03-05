@@ -34,6 +34,9 @@ function ProtectedRoute({ children }) {
       </FullPage>
     );
 
+  // 4a. If there IS a user, render the app
+  if (isAuthenticated && user.email !== 'velocityexpresses@gmail.com') return navigate('/');
+
   // 4. If there IS a user, render the app
   if (isAuthenticated && user.email === 'velocityexpresses@gmail.com') return children;
 }
